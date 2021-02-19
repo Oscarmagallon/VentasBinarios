@@ -1,6 +1,8 @@
 package ventas;
 
-	public class Venta {
+import java.io.Serializable;
+
+public class Venta implements Serializable {
 
 		private String cliente;
 		private int cod;

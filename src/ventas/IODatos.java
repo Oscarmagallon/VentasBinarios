@@ -7,8 +7,40 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class IODatos {
+	public static void guardarObjetos(String ruta, Venta[] vVentas) {
+		File f = new File(ruta);
+		if (!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try (FileOutputStream fo = new FileOutputStream(f);
+			 ObjectOutputStream escribir = new ObjectOutputStream(fo)){
+			
+			for (Venta venta : vVentas) {
+				if(venta!=null) {
+					vVentas
+				}
+			}
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+
 
 	public static void guardarDatos(String ruta, Venta[] vVentas) {
 		File f = new File(ruta);
